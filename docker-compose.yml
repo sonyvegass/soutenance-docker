@@ -2,16 +2,14 @@ version: '3.8'
 
 services:
   frontend:
-    build:
-      context: ./frontend/
+    image: sonyvegass/frontend-1
     ports: 
       - "8081:80"
     networks: 
       - app-network
 
   backend:
-    build:
-      context: ./backend/ 
+    image: sonyvegass/backend-1 
     ports: 
       - "8082:80"
     networks: 
@@ -25,7 +23,7 @@ services:
       - db
 
   db:
-    image: mysql:5.7
+    image: sonyvegass/db-1
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: docker

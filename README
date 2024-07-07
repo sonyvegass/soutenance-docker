@@ -17,6 +17,9 @@ Créer un compte Docker
 
 ## Étapes pour tester le projet
 
+# Cloner le repo en local 
+git clone https://github.com/sonyvegass/soutenance-docker
+
 # Authentification sur Docker Hub
 docker login 
 

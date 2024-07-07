@@ -1,0 +1,17 @@
+{
+    "name": "remiv/backend",
+    "autoload": {
+        "psr-4": {
+            "Remiv\\Backend\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Remi Vavichandran",
+            "email": "remi.vavichandran2@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    }
+}

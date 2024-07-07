@@ -1,0 +1,33 @@
+Sonia AMARI
+Remi VAVICHANDRAN
+Pauline EKWE NKOUANE
+
+https://github.com/sonyvegass/
+https://hub.docker.com/repository/docker/sonyvegass/
+
+
+# Guide pour déployer notre projet Docker
+
+
+## Prérequis
+
+Installer  Docker sur votre machine : [Installer Docker](https://docs.docker.com/get-docker/)
+Créer un compte Docker 
+
+
+## Étapes pour tester le projet
+
+# Authentification sur Docker Hub
+docker login 
+
+# Pull les images depuis Docker Hub
+docker pull sonyvegass/backend-1
+docker pull sonyvegass/frontend-1
+docker pull sonyvegass/db-1
+
+# Exécuter les conteneurs
+docker-compose build
+docker-compose up -d
+
+# Voir le rendu
+Font-end : http://localhost:8081/signup/index.php

@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend/
+    ports: 
+      - "8081:80"
+    networks: 
+      - app-network
+
+  backend:
+    build:
+      context: ./backend/ 
+    ports: 
+      - "8082:80"
+    networks: 
+      - app-network
+    environment:
+      DB_HOST: db
+      DB_DATABASE: docker
+      DB_USER: root
+      DB_PASSWORD: root
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: docker
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:
